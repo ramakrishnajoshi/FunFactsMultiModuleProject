@@ -24,24 +24,34 @@ FunFacts is an example of Modular architecture
 1. Library Module
 2. Feature Module
 3. App Module
+</br>
+</br>
 
-Library Module- It can be a third party or our own functionality developed which is kind of a utility for our main project. we can use it in multiple places in our project
-Feature Module- In our project, we can divide functionality or flow into small units as a separate independent feature.
-App Module- This is our Wholesome product, it will combines all the feature modules we developed and form a single entity.
+
+1. Library Module- It can be a third party or our own functionality developed which is kind of a utility for our main project. we can use it in multiple places in our project.
+2. Feature Module- In our project, we can divide functionality or flow into small units as a separate independent feature.
+3. App Module- This is our Wholesome product, it will combines all the feature modules we developed and form a single entity.
+</br>
+</br>
+
 
 In this project, 
-Library Module is :central module that houses API calls using Retrofit
-Feature Modules are :catfunfacts and :dogfunfacts
-App Module is :app module
+1. Library Module is :central module that houses API calls using Retrofit.
+2. Feature Modules are :catfunfacts and :dogfunfacts
+3. App Module is :app module
+</br>
+</br>
 
 
 ‘buildSrc’ ( a veronica to manage API/third party dependencies)
 There is also a directory buildSrc that has all the dependencies used in our App, we can create any modules and use any third-party or Android API we can define here at one place and we can use inside all the modules it will help us maintaining similar dependencies versions throughout.
+
+```
 object Modules {
     const val central = ":central"
     const val dogfunfacts = ":dogfunfacts"
     const val catfunfacts = ":catfunfacts"
 }
-
+```
 
 Medium Article : https://medium.com/native-mobile-bits/modular-android-app-architecture-build-to-scale-d6f402cbd93a
