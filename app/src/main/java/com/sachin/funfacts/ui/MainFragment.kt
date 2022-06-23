@@ -1,5 +1,6 @@
 package com.sachin.funfacts.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.sachin.central.utils.CoreUtility
 import com.sachin.funfacts.R
+import com.sachin.funfacts.catfunfacts.ui.CatDetailActivity
 import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
@@ -46,6 +48,10 @@ class MainFragment : Fragment() {
         bottom_navigation.setOnNavigationItemReselectedListener{
             CoreUtility.printLog("ComingHere", "item reselected ")
 
+        }
+
+        cartDetailButton.setOnClickListener {
+            startActivity(Intent(requireActivity(), CatDetailActivity::class.java))
         }
     }
 
