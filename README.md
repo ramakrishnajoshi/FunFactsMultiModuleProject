@@ -17,21 +17,31 @@ FunFacts is an example of Modular architecture
 
 ## About the author
 ### <a href="https://www.youtube.com/channel/UCTjQSpx2waqXTC37AgM8qyA/"> Sachin Rajput</a>
-
-I am a developer from India and I work with Android on daily basis and I love creating native Mobile apps which can help users and give a plesant experience :)<br/>
-I love contributing to Open Source community and I share my learnings and respective implementation </br> my 
-Youtube Channel <a href="https://www.youtube.com/channel/UCTjQSpx2waqXTC37AgM8qyA"> (Native Mobile Bits) </a> and on <a href="https://droid-lover.medium.com//">Medium publication</a> as well. 
 </br></br>
    
    
- Lets connect over here :) 
-  
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-0e76a8?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/sachin-rajput-998b48105/)
-[![Website Badge](https://img.shields.io/badge/Medium-3b5998?style=flat-square&logo=google-chrome&logoColor=white)](https://droid-lover.medium.com/)
-[![Stackoverflow Badge](https://img.shields.io/badge/-Stackoverflow-FFA500?style=flat-square&logo=Stackoverflow&logoColor=orange)](https://stackoverflow.com/users/7193506/sachin)
-[![Twitter Badge](https://img.shields.io/twitter/follow/droid_lover_?style=social)](https://twitter.com/droid_lover_)
+   In Android development we can create these kinds of Modules for us:
+1. Library Module
+2. Feature Module
+3. App Module
 
-</br>
+Library Module- It can be a third party or our own functionality developed which is kind of a utility for our main project. we can use it in multiple places in our project
+Feature Module- In our project, we can divide functionality or flow into small units as a separate independent feature.
+App Module- This is our Wholesome product, it will combines all the feature modules we developed and form a single entity.
 
-[![Youtube Badge](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCTjQSpx2waqXTC37AgM8qyA)
+In this project, 
+Library Module is :central module that houses API calls using Retrofit
+Feature Modules are :catfunfacts and :dogfunfacts
+App Module is :app module
 
+
+‘buildSrc’ ( a veronica to manage API/third party dependencies)
+There is also a directory buildSrc that has all the dependencies used in our App, we can create any modules and use any third-party or Android API we can define here at one place and we can use inside all the modules it will help us maintaining similar dependencies versions throughout.
+object Modules {
+    const val central = ":central"
+    const val dogfunfacts = ":dogfunfacts"
+    const val catfunfacts = ":catfunfacts"
+}
+
+
+Medium Article : https://medium.com/native-mobile-bits/modular-android-app-architecture-build-to-scale-d6f402cbd93a
